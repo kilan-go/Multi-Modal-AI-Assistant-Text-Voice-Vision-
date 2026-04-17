@@ -1,0 +1,5 @@
+whisper
+torch
+transformers
+opencv-python
+pyttsx3

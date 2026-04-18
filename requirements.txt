@@ -1,5 +1,10 @@
-whisper
 torch
 transformers
 opencv-python
 pyttsx3
+openai-whisper
+sounddevice
+numpy
+ultralytics
+fastapi
+uvicorn

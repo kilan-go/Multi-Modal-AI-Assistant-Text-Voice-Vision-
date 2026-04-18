@@ -1,7 +1,7 @@
-from speech.speech_to_text import listen
-from speech.text_to_speech import speak
-from brain.assistant import think
-from vision.camera import capture_image
+from app.speech.speech_to_text import listen
+from app.speech.text_to_speech import speak
+from app.brain.assistant import think
+from app.vision.camera import capture_image
 
 def main():
     while True:

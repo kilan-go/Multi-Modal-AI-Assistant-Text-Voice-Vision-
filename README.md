@@ -1,26 +1,20 @@
----
+# 🤖 Multi-Modal AI Assistant
 
-# 🚀  Multi-Modal AI Assistant (Text + Voice + Vision)
+AI system with:
 
-### Idea
+- Speech Recognition
+- NLP (LLM)
+- Computer Vision (YOLO)
+- Memory system
 
-Build an assistant that:
+## 🚀 Features
 
-* Understands **speech (ASR)**
-* Processes **text (NLP)**
-* Sees environment (CV)
-* Responds intelligently
+- Real-time voice interaction
+- Object detection
+- Context-aware responses
 
-### Stack
+## 🐳 Run with Docker
 
-* NLP: Hugging Face Transformers
-* Speech: Whisper
-* Vision: OpenCV
-
-### Features
-
-* “What is in front of me?”
-* “Summarize what I said”
-* Context memory
-
----
+```bash
+docker build -t ai-assistant .
+docker run -p 5000:5000 ai-assistant

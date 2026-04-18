@@ -1,5 +1,5 @@
 from transformers import pipeline
-from brain.memory import get_context
+from app.brain.memory import get_context
 
 chatbot = pipeline("text-generation", model="gpt2")
 

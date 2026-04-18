@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from brain.assistant import think
+from app.brain.assistant import think
 
 app = FastAPI()
 

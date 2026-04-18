@@ -1,5 +1,7 @@
 from fastapi import FastAPI
-from app.brain.assistant import think
+from brain.assistant import think
+from vision.detect import detect_objects
+from brain.memory import add_to_memory
 
 app = FastAPI()
 
@@ -7,11 +9,17 @@ app = FastAPI()
 def home():
     return {"message": "AI Assistant Running"}
 
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
 @app.post("/ask")
 def ask(question: str):
-    if "what do you see" in question.lower():
+    if "see" in question.lower() or "what do you see" in question.lower():
         objects = detect_objects()
-        return {"response": f"I see: {', '.join(objects)}"}
-    
-    response = think(question)
+        response = f"I see: {', '.join(objects)}"
+    else:
+        response = think(question)
+
+    add_to_memory(question, response)
     return {"response": response}

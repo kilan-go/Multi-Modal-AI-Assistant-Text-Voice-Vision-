@@ -1,11 +1,11 @@
 from transformers import pipeline
-from app.brain.memory import get_context
+from brain.memory import get_context
 
 chatbot = pipeline("text-generation", model="gpt2")
 
 def think(prompt):
     context = get_context()
     full_prompt = context + "\nUser: " + prompt + "\nAI:"
-    
-    response = chatbot(full_prompt, max_length=150)
-    return response[0]['generated_text']
+
+    result = chatbot(full_prompt, max_length=150, num_return_sequences=1)
+    return result[0]["generated_text"]

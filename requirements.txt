@@ -1,10 +1,10 @@
 torch
 transformers
+fastapi
+uvicorn
 opencv-python
 pyttsx3
 openai-whisper
 sounddevice
 numpy
 ultralytics
-fastapi
-uvicorn

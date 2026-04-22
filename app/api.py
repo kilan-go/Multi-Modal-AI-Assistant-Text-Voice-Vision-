@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from brain.assistant import think
-from vision.detect import detect_objects
+from vision import detection
 from brain.memory import add_to_memory
 
 app = FastAPI()
@@ -16,7 +16,7 @@ def health():
 @app.post("/ask")
 def ask(question: str):
     if "see" in question.lower() or "what do you see" in question.lower():
-        objects = detect_objects()
+        objects = detection.detect_objects()
         response = f"I see: {', '.join(objects)}"
     else:
         response = think(question)

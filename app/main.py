@@ -7,7 +7,7 @@ def main():
     while True:
         user_input = listen()
         
-        if "see" in user_input.lower():
+        if "see" in user_input:
             img = capture_image()
             response = f"I captured an image: {img}"
         else:

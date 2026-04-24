@@ -1,19 +1,5 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: ai-assistant
-spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: ai-assistant
-  template:
-    metadata:
-      labels:
-        app: ai-assistant
-    spec:
-      containers:
-      - name: ai-assistant
-        image: YOUR_USERNAME/ai-assistant:latest
-        ports:
-        - containerPort: 5000
+containers:
+- name: ai_assistant
+  image: gcr.io/ai-assistant-12345/ai_assistant
+  ports:
+    - containerPort: 5000
